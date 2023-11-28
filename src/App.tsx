@@ -1,9 +1,10 @@
+import { Flow } from './components/Flow';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      App
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <Flow />
     </div>
   );
 }
