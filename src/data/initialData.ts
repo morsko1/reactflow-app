@@ -1,24 +1,27 @@
 export const initialNodes = [
   {
     id: '1',
+    type: 'custom',
     data: {
       label: 'node 1',
     },
-    position: { x: 250, y: 100 },
+    position: { x: 100, y: 100 },
   },
   {
     id: '2',
+    type: 'custom',
     data: {
       label: 'node 2',
     },
-    position: { x: 100, y: 200 },
+    position: { x: 400, y: 100 },
   },
   {
     id: '3',
+    type: 'custom',
     data: {
       label: 'node 3',
     },
-    position: { x: 400, y: 200 },
+    position: { x: 400, y: 250 },
   },
 ];
 
