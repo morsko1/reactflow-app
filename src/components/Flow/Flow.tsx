@@ -3,6 +3,7 @@ import ReactFlow, { Connection, Controls, MiniMap, addEdge, useEdgesState, useNo
 import 'reactflow/dist/style.css';
 import { initialEdges, initialNodes } from '../../data/initialData';
 import { CustomNode } from '../CustomNode/CustomNode';
+import { getMinimapNodeColor } from '../../utils/flow';
 
 const nodeTypes = { custom: CustomNode };
 
@@ -21,10 +22,16 @@ export const Flow = () => {
       onConnect={onConnect}
       fitView
       nodeTypes={nodeTypes}
-      style={{ backgroundColor: '#F6F6F6' }}
+      style={{ backgroundColor: '#F8F9F9' }}
     >
       <Controls />
-      <MiniMap />
+      <MiniMap
+        pannable
+        zoomable
+        zoomStep={2}
+        nodeColor={getMinimapNodeColor}
+        style={{ backgroundColor: '#E5E8E8' }}
+      />
     </ReactFlow>
   );
 };
