@@ -4,12 +4,15 @@ import 'reactflow/dist/style.css';
 import { initialEdges, initialNodes } from '../../data/initialData';
 import { CustomNode } from '../CustomNode/CustomNode';
 import { getMinimapNodeColor } from '../../utils/flow';
+import { getLayoutedElements } from '../../utils/autoLayout';
 
 const nodeTypes = { custom: CustomNode };
 
+const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(initialNodes, initialEdges);
+
 export const Flow = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
   const onConnect = useCallback((params: Connection) => setEdges((eds) => addEdge(params, eds)), []);
 

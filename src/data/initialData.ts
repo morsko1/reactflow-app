@@ -1,6 +1,9 @@
-import { NodeStatus } from '../types/Node';
+import { Node } from 'reactflow';
+import { NodeData, NodeStatus } from '../types/Node';
 
-export const initialNodes = [
+const position = { x: 0, y: 0 };
+
+export const initialNodes: Node<NodeData>[] = [
   {
     id: '1',
     type: 'custom',
@@ -8,7 +11,7 @@ export const initialNodes = [
       label: 'node 1',
       status: NodeStatus.SUCCESS,
     },
-    position: { x: 100, y: 100 },
+    position,
   },
   {
     id: '2',
@@ -17,7 +20,7 @@ export const initialNodes = [
       label: 'node 2',
       status: NodeStatus.SUCCESS,
     },
-    position: { x: 400, y: 100 },
+    position,
   },
   {
     id: '3',
@@ -26,7 +29,7 @@ export const initialNodes = [
       label: 'node 3',
       status: NodeStatus.RUNNING,
     },
-    position: { x: 400, y: 400 },
+    position,
   },
   {
     id: '4',
@@ -35,7 +38,7 @@ export const initialNodes = [
       label: 'node 4',
       status: NodeStatus.ERROR,
     },
-    position: { x: 400, y: 550 },
+    position,
   },
   {
     id: '5',
@@ -44,7 +47,7 @@ export const initialNodes = [
       label: 'node 5',
       status: NodeStatus.INIT,
     },
-    position: { x: 400, y: 700 },
+    position,
   },
   {
     id: '6',
@@ -53,7 +56,7 @@ export const initialNodes = [
       label: 'node 6',
       status: NodeStatus.WARNING,
     },
-    position: { x: 400, y: 850 },
+    position,
   },
   {
     id: '7',
@@ -62,7 +65,7 @@ export const initialNodes = [
       label: 'node 7',
       status: NodeStatus.RUNNING,
     },
-    position: { x: 700, y: 100 },
+    position,
   },
   {
     id: '8',
@@ -71,7 +74,7 @@ export const initialNodes = [
       label: 'node 8',
       status: NodeStatus.RUNNING,
     },
-    position: { x: 700, y: 250 },
+    position,
   },
   {
     id: '9',
@@ -80,7 +83,7 @@ export const initialNodes = [
       label: 'node 9',
       status: NodeStatus.INIT,
     },
-    position: { x: 700, y: 400 },
+    position,
   },
   {
     id: '10',
@@ -89,7 +92,7 @@ export const initialNodes = [
       label: 'node 10',
       status: NodeStatus.INIT,
     },
-    position: { x: 700, y: 550 },
+    position,
   },
 ];
 
