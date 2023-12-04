@@ -8,5 +8,5 @@ export const NODE_STATUS_COLOR = {
   [NodeStatus.SUCCESS]: 'green',
 };
 
-export const NODE_WIDTH = 150;
-export const NODE_HEIGHT = 40;
+export const NODE_WIDTH = 200;
+export const NODE_HEIGHT = 75;

@@ -10,6 +10,11 @@ export const initialNodes: Node<NodeData>[] = [
     data: {
       label: 'node 1',
       status: NodeStatus.SUCCESS,
+      parameters: {
+        param1: 'param1',
+        param2: 'param2',
+        param3: 'param3',
+      },
     },
     position,
   },
@@ -64,6 +69,11 @@ export const initialNodes: Node<NodeData>[] = [
     data: {
       label: 'node 7',
       status: NodeStatus.RUNNING,
+      parameters: {
+        param1: 'param1',
+        param2: 'param2',
+        param3: 'param3',
+      },
     },
     position,
   },
@@ -73,6 +83,11 @@ export const initialNodes: Node<NodeData>[] = [
     data: {
       label: 'node 8',
       status: NodeStatus.RUNNING,
+      parameters: {
+        param1: 'param1',
+        param2: 'param2',
+        param3: 'param3',
+      },
     },
     position,
   },
@@ -97,13 +112,13 @@ export const initialNodes: Node<NodeData>[] = [
 ];
 
 export const initialEdges = [
-  { id: 'e_1-2', source: '1', target: '2' },
-  { id: 'e_1-3', source: '1', target: '3' },
-  { id: 'e_1-4', source: '1', target: '4' },
-  { id: 'e_1-5', source: '1', target: '5' },
-  { id: 'e_1-6', source: '1', target: '6' },
-  { id: 'e_2-7', source: '2', target: '7' },
-  { id: 'e_2-8', source: '2', target: '8' },
-  { id: 'e_3-9', source: '3', target: '9' },
-  { id: 'e_3-10', source: '3', target: '10' },
+  { id: 'e_1-2', type: 'custom', source: '1', target: '2' },
+  { id: 'e_1-3', type: 'custom', source: '1', target: '3' },
+  { id: 'e_1-4', type: 'custom', source: '1', target: '4' },
+  { id: 'e_1-5', type: 'custom', source: '1', target: '5' },
+  { id: 'e_1-6', type: 'custom', source: '1', target: '6' },
+  { id: 'e_2-7', type: 'custom', source: '2', target: '7' },
+  { id: 'e_2-8', type: 'custom', source: '2', target: '8' },
+  { id: 'e_3-9', type: 'custom', source: '3', target: '9' },
+  { id: 'e_3-10', type: 'custom', source: '3', target: '10' },
 ];
