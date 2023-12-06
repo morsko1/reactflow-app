@@ -1,11 +1,12 @@
+import { FlowProvider } from './context/flow';
 import { Flow } from './components/Flow/Flow';
 import './App.css';
 
 function App() {
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <FlowProvider>
       <Flow />
-    </div>
+    </FlowProvider>
   );
 }
 
