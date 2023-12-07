@@ -2,10 +2,12 @@ import { useCallback } from 'react';
 import ReactFlow, { Connection, Controls, MiniMap, addEdge } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { CustomNode } from '../CustomNode/CustomNode';
+import { CustomEdge } from '../CustomEdge/CustomEdge';
 import { getMinimapNodeColor } from '../../utils/flow';
 import { useFlowContext } from '../../context/flow';
 
 const nodeTypes = { custom: CustomNode };
+const edgeTypes = { custom: CustomEdge };
 
 export const Flow = () => {
   const { nodes, edges, setEdges, onNodesChange, onEdgesChange } = useFlowContext();
@@ -22,6 +24,7 @@ export const Flow = () => {
         onConnect={onConnect}
         fitView
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         style={{ backgroundColor: '#F8F9F9' }}
       >
         <Controls />
