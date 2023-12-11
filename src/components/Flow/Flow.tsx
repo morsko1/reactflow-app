@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import ReactFlow, { Connection, Controls, MiniMap, addEdge } from 'reactflow';
+import ReactFlow, { Connection, Controls, Edge, MiniMap, addEdge } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { CustomNode } from '../CustomNode/CustomNode';
 import { CustomEdge } from '../CustomEdge/CustomEdge';
@@ -10,9 +10,17 @@ const nodeTypes = { custom: CustomNode };
 const edgeTypes = { custom: CustomEdge };
 
 export const Flow = () => {
-  const { nodes, edges, setEdges, onNodesChange, onEdgesChange } = useFlowContext();
+  const { nodes, edges, setEdges, onNodesChange, onEdgesChange, setHoveredEdge } = useFlowContext();
 
   const onConnect = useCallback((params: Connection) => setEdges((eds) => addEdge(params, eds)), []);
+
+  const onEdgeMouseEnter = (_event: React.MouseEvent, edge: Edge) => {
+    setHoveredEdge(edge.id);
+  };
+
+  const onEdgeMouseLeave = () => {
+    setHoveredEdge(null);
+  };
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
@@ -26,6 +34,8 @@ export const Flow = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         style={{ backgroundColor: '#F8F9F9' }}
+        onEdgeMouseEnter={onEdgeMouseEnter}
+        onEdgeMouseLeave={onEdgeMouseLeave}
       >
         <Controls />
         <MiniMap
