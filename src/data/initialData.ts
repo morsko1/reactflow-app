@@ -32,7 +32,8 @@ export const initialNodes: Node<NodeData>[] = [
     type: 'custom',
     data: {
       label: 'node 3',
-      status: NodeStatus.RUNNING,
+      status: NodeStatus.INIT,
+      disabled: true,
     },
     position,
   },
@@ -97,6 +98,7 @@ export const initialNodes: Node<NodeData>[] = [
     data: {
       label: 'node 9',
       status: NodeStatus.INIT,
+      disabled: true,
     },
     position,
   },
@@ -106,6 +108,7 @@ export const initialNodes: Node<NodeData>[] = [
     data: {
       label: 'node 10',
       status: NodeStatus.INIT,
+      disabled: true,
     },
     position,
   },
